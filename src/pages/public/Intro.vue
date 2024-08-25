@@ -62,8 +62,10 @@
 </template>
 
 <script setup>
-import searchEvents from "@/components/event-sale/search-events.vue";
-import highlightEvents from "@/components/event-sale/highlight-events.vue";
+
+import { useRoute } from 'vue-router';
+const route = useRoute()
+
 </script>
 
 <style scoped>
