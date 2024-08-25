@@ -1,7 +1,9 @@
 <script setup>
 </script>
 <template>
-    <p>Bom dia</p>
+  <div>
+    <SearchEvents />
+  </div>
 </template>
 
 
