@@ -16,7 +16,6 @@ const loading = ref(true)
 
 async function fetchEvents(routeParam) { 
     const { data } = await eventParticipantControllerFindAllPublicEvents(10, 1, '', getCategory(routeParam));
-    console.log(data)
     events.value = data.data || [];
     loading.value = false
 }
@@ -34,7 +33,6 @@ watch(
   () => route.path,
   async (newPath) => {
     nameCategory.value = getCategory(route.params.category);
-    console.log(nameCategory.value);
     fetchEvents(route.params.category);
   }
 );
