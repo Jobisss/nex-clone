@@ -15,7 +15,6 @@ const {category, id ,photo ,slug ,title, mobile, fixed } = defineProps(['categor
         cover
         rounded
         class="mb-2 position-relative rounded-lg "
-        width="300px"
         :class="{'w-100' : $vuetify.display.smAndDown}"
       ></v-img>
       <v-sheet

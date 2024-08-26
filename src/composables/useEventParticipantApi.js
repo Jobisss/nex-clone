@@ -45,7 +45,7 @@ function useEventParticipantHook() {
 
   const eventParticipantControllerGetEventsMoreView = async () => {
     try {
-      const { data, status, statusText } = await api.get('/events/more-view');
+      const { data, status, statusText } = await api.get('/event-participant/v1/event-participant/get-events-more-views');
       return {
         status,
         message: statusText,

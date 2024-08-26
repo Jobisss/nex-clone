@@ -1,5 +1,6 @@
 <template>
   <v-row class="d-flex my-2 mx-1 w-full">
+    
     <v-col
       xs="12"
       sm="12"

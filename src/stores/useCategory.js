@@ -3,16 +3,16 @@ import { defineStore } from "pinia";
 export const useCategory = defineStore('myCategories', {
   state : () => ({ 
     categories : [
-      { title: "Confêrencia",
+      { title: "Confêrencias",
         href : "conferencias"
        },
-      { title: "Workshop",
+      { title: "Workshops",
         href : "workshops"
       },
-      { title: "Seminário",
+      { title: "Seminários",
         href : "seminarios"
        },
-      { title: "Reunião de negócios",
+      { title: "Reuniões de negócios",
         href : "reuniaodenegocios"
        },
       { title: "Lançamento de produtos",

@@ -8,13 +8,13 @@ import { ref, onMounted } from 'vue';
 
 const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
 
-const events = ref([]);
+const eventsMoreViews = ref([]);
 const loading = ref(true)
 
 onMounted(async () => {
   try {
     const { data } = await eventParticipantControllerFindAllPublicEvents(10, 1, '', '');
-    events.value = data.data || []; // Atualizando o estado com os dados recebidos
+    eventsMoreViews.value = data.data || []; // Atualizando o estado com os dados recebidos
     loading.value = false
   } catch (error) {
     console.error('Failed to fetch events:', error);
@@ -37,13 +37,13 @@ onMounted(async () => {
 
         <SearchInput/>
         <div v-if="!loading">
-          <CarrouselEvents :events="events"/>
+          <CarrouselEvents :events="eventsMoreViews"/>
         </div>
         <div v-else>
           <p>Loading...</p>
         </div>
 
-        <div class="d-flex justify-center my-2 align-center">
+        <div class="d-flex justify-center mb-4 align-center">
           <v-btn
             style="
               background-color: #38be92;
