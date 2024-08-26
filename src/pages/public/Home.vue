@@ -5,9 +5,10 @@ const route = useRoute()
 import CarrouselEvents from '@/components/event/CarrouselEvents.vue';
 import useEventParticipantHook from '../../composables/useEventParticipantApi';
 import { ref, onMounted } from 'vue';
+import { useUserStore } from '@/stores/useUser';
 
 const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
-
+const user = useUserStore()
 const eventsMoreViews = ref([]);
 const loading = ref(true)
 
