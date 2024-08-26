@@ -4,11 +4,16 @@ import { toTypedSchema } from '@vee-validate/zod';
 import SignBackground from '@/components/form/SignBackground.vue';
 import { z } from 'zod'
 import { useForm } from 'vee-validate';
+import { useAthApiHook } from '@/composables/useAuthApi';
+import { useRouter } from 'vue-router';
+import { useUserStore } from '@/stores/useUser';
 
+const { postFormLogin, getUserData } = useAthApiHook()
+const router = useRouter()
 const schema = z.object({
     email: z.string().email({ message: "Email inválido" }),
     password: z.string()
-        .min(10, { message: "Minimo de 10 caracteres" })
+        .min(5, { message: "Minimo de 10 caracteres" })
         .regex(/[A-Z]/, { message: "Deve ter no minimo uma letra maiúscula " })
         .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "A senha deve conter pelo menos um caractere especial" })
         .regex(/\d/, "A senha deve conter pelo menos um dígito"),
@@ -17,12 +22,24 @@ const schema = z.object({
 const { values, defineField, errors, handleSubmit, handleReset, setErrors } = useForm({
     validationSchema: toTypedSchema(schema)
 })
-const [email, emailAttrs] = defineField('email')
-const [password, passwordAttrs] = defineField('password')
+const user = useUserStore()
+const [email] = defineField('email')
+const [password] = defineField('password')
 
 
-const submit = handleSubmit(values => {
 
+
+const submit = handleSubmit(async (values) => {
+    try { 
+        let response = await postFormLogin(email.value, password.value)
+        window.localStorage.setItem('token', response.token)
+        const userInfo = await getUserData(window.localStorage.getItem('token'))
+        user.updateUser(userInfo)
+        router.push('/')
+    }catch(e) { 
+        console.log("error on login", e.message)
+    }
+    
 })
 
 
@@ -39,6 +56,7 @@ const submit = handleSubmit(values => {
                     :error-field="errors.password" />
                 <v-btn type="submit" round color="primary" class="w-50 py-7 mt-2 d-flex align-center "  :class="{ 'w-75' : $vuetify.display.smAndDown }" dark>Entrar</v-btn>
             </form>
+
         </template>
         <template v-slot:footer>
             <p class="mt-2 text-subtitle-1">Não possui conta? <RouterLink to="/signup"
