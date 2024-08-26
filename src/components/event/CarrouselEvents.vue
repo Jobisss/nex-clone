@@ -10,7 +10,6 @@ const { smAndDown } = useDisplay();
 const isSmall = computed(() => smAndDown.value);
 
 const { events } = defineProps(['events']);
-console.log(events)
 watch(events, () => {
   console.log(events, 'foi ataualizado')
 })
@@ -18,7 +17,7 @@ watch(events, () => {
 </script>
 
 <template>
-  <div class="w-100">
+  <div class="w-100 mt-6">
     <div v-if="events.length !== 0" style="margin-bottom: 15%">
       <v-slide-group v-if="!isSmall" show-arrows>
         <v-slide-group-item v-for="event in events" :key="event.id">

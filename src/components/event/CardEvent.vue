@@ -3,8 +3,6 @@ import { BASE_IMAGE_URL } from '@/utils/getConstants';
 import { firstAndLastWordFirstLetters } from '@/utils/getNameInitials';
 
 const {category, id ,photo ,slug ,title, mobile, fixed } = defineProps(['category', 'id', 'photo', 'title', 'mobile','fixed'])
-
-
   
 </script>
 <template>
