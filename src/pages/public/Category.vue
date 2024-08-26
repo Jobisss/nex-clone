@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute } from "vue-router";
-import { watch, ref, onMounted } from "vue";
+import { watch, ref, onMounted, computed } from "vue";
 import SearchEvents from "@/components/event-sale/SearchEvents.vue";
 import CarrouselEvents from "@/components/event/CarrouselEvents.vue";
 import { getCategory } from "@/utils/getCategory";
@@ -9,7 +9,7 @@ const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHoo
 const route = useRoute()
 const nameCategory = ref(getCategory(route.params.category))
 const events = ref([])
-
+const query = ref('dsasd')
 
 
 
@@ -106,14 +106,16 @@ watch(
      }
  );
 
+ const filtredEvents = computed(()=> { 
+    return events.value.filter(event => event.title.toLowerCase().includes(query.value.toLowerCase()))
+ })
 
 
 </script>
-<template>
-<div>
-  <SearchEvents></SearchEvents>
-  <CategoryGrid :events="events"/>  
-</div>    
+<template>    
+    <SearchEvents v-model="query"></SearchEvents>
+    <CarrouselEvents :events="filtredEvents"/>
+          
 </template>
 
 <style scoped></style>

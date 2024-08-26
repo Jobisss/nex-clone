@@ -1,7 +1,6 @@
 <template>
   <v-text-field
     class="custom-text-field mt-4 mt-sm-0"
-    :loading="loading"
     v-model="searchEvent"
     append-inner-icon="mdi-magnify"
     density="comfortable"
@@ -19,9 +18,6 @@
 import { ref, computed, defineProps } from "vue";
 
 
-
-const loaded = ref(false);
-const loading = ref(false);
 
 // Define a largura do campo de texto dinamicamente
 const inputStyle = computed(() => ({
@@ -47,14 +43,7 @@ const props = defineProps({
 
 let searchEvent = ref("");
 
-const eventFilter = computed(() => {
-  if (props.events && searchEvent.value) {
-    return props.events.filter((ev) =>
-      ev.title.toUpperCase().includes(searchEvent.value.toUpperCase())
-    );
-  }
-  return props.events;
-});
+
 </script>
 
 <style scoped>
