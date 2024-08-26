@@ -33,7 +33,7 @@ const { categories } = useCategory();
     </template>
     <template #default>
       <div class="d-flex ga-2 justify-start w-100">
-        <v-btn> Eventos </v-btn>
+        <v-btn :to="{ name: 'event' }"> Eventos </v-btn>
         <v-menu>
           <template #activator="{ props }">
             <v-btn append-icon="mdi-chevron-down" v-bind="props"> Categorias </v-btn>

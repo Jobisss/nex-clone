@@ -7,6 +7,7 @@ import { getCategory } from "@/utils/getCategory";
 
 
 
+
 const mockEvents = [
   {
     id: '1',
@@ -96,9 +97,10 @@ watch(
 
 </script>
 <template>
-    <SearchEvents></SearchEvents>
-    <CarrouselEvents :events="events"/>
-          
+<div>
+  <SearchEvents></SearchEvents>
+  <CategoryGrid :events="events"/>  
+</div>    
 </template>
 
 <style scoped></style>

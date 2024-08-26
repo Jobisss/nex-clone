@@ -8,7 +8,7 @@ const {category, id ,photo ,slug ,title, mobile} = defineProps(['category', 'id'
 </script>
 <template>
   <router-link to="/" class="w-100">
-    <v-card class="rounded-lg card" :class="{ 'w-100' : mobile, 'card-size' : !mobile }">
+    <v-card class="rounded-lg card w-100">
       <v-img
         v-if="photo"
         height="160"

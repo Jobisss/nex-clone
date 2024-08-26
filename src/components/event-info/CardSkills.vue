@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <v-row class="d-flex justify-center align-center my-10 no-gutters">
+  <v-row class="d-flex justify-center align-center my-4 no-gutters">
     <v-col cols="12" md="8" class="d-flex justify-center">
       <v-row class="d-flex justify-center align-center" no-gutters>
         <v-col cols="12" sm="6" md="4" class="d-flex justify-center">

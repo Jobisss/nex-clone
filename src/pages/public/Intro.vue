@@ -1,9 +1,16 @@
 <template>
   <div>
-    <div class="d-flex align-center justify-center">
+    <div class="d-flex align-center justify-center pa-4 pa-md-8">
       <v-img
+        v-if="$vuetify.display.smAndDown"
+        src="../../assets/event-info/banner-mobile-dark.svg"
+        class="centered-img mt-2"
+      ></v-img>
+
+      <v-img
+        v-else
         src="../../assets/event-info/banner-dark.svg"
-        class="centered-img mt-0"
+        class="centered-img mt-2"
       ></v-img>
     </div>
 
@@ -13,7 +20,7 @@
         class="centered-img d-none d-sm-flex"
       ></v-img>
 
-      <div class="d-flex justify-center">
+      <div class="d-flex justify-center my-4">
         <v-btn
           style="
             background-color: #38be92;

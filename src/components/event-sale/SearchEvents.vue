@@ -27,14 +27,25 @@
       </v-list>
     </v-menu>
 
-    <SearchInput />
+    <SearchInput :events="events" class="mr-1"/>
   </v-container>
 </template>
   
-  <script setup>
+<script setup>
 import { useCategory } from "@/stores/useCategory";
 import SearchInput from "../commun/SearchInput.vue";
 
+const props = defineProps({
+  events: {
+    type: Array,
+    required: true,
+  },
+
+  searchQuery: {
+    type: String,
+    default: "",
+  },
+});
 const store = useCategory();
 </script>
   

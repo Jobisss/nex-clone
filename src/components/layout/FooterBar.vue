@@ -7,7 +7,7 @@
 
       <v-col class="mb-3 mb-md-0">
         <div class="f-16 my-3">
-          Nex Event &copy; {{ new Date().getFullYear() }}
+          NexEvent - Eventos
         </div>
       </v-col>
 
