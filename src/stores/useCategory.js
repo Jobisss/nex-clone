@@ -4,31 +4,31 @@ export const useCategory = defineStore('myCategories', {
   state : () => ({ 
     categories : [
       { title: "Confêrencia",
-        href : "/category-conferencias"
+        href : "conferencias"
        },
       { title: "Workshop",
-        href : "/category-workshops"
+        href : "workshops"
       },
       { title: "Seminário",
-        href : "/category-seminarios"
+        href : "seminarios"
        },
       { title: "Reunião de negócios",
-        href : "/category-reuniaodenegocios"
+        href : "reuniaodenegocios"
        },
       { title: "Lançamento de produtos",
-        href : "/category-lançamentosdeprodutos"
+        href : "lançamentosdeprodutos"
        },
       { title: "Treinamento",
-        href: "/category-treinamentos"
+        href: "treinamentos"
        },
       { title: "Networking",
-        href: "/category-networking"
+        href: "networking"
        },
       { title: "Webinar",
-        href: "/category-webinars"
+        href: "webinars"
        },
       { title: "Todos",
-        href: "/category-all"
+        href: "all"
        },
     ]
   })
