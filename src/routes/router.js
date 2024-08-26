@@ -1,6 +1,7 @@
 import Category from "@/pages/public/Category.vue";
 import EventSale from "@/pages/public/EventSale.vue";
 import Homepage from "@/pages/public/Home.vue";
+import Intro from "@/pages/public/Intro.vue";
 import Signin from "@/pages/public/signin.vue";
 import Signup from "@/pages/public/signup.vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -32,7 +33,7 @@ const routes = [
   },
   {
     path : '/events/intro', 
-    component : Category,
+    component : Intro,
     name : 'intro',
     meta : {
       layout : 'home-layout'
