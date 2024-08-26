@@ -4,12 +4,13 @@ import { watch, ref, onMounted, computed } from "vue";
 import SearchEvents from "@/components/event-sale/SearchEvents.vue";
 import CarrouselEvents from "@/components/event/CarrouselEvents.vue";
 import { getCategory } from "@/utils/getCategory";
+import CategoryGrid from "@/components/category/CategoryGrid.vue";
 import useEventParticipantHook from "@/composables/useEventParticipantApi";
 const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook()
 const route = useRoute()
 const nameCategory = ref(getCategory(route.params.category))
 const events = ref([])
-const query = ref('dsasd')
+const query = ref('')
 
 
 
@@ -114,7 +115,7 @@ watch(
 </script>
 <template>    
     <SearchEvents v-model="query"></SearchEvents>
-    <CarrouselEvents :events="filtredEvents"/>
+    <CategoryGrid :events="filtredEvents"></CategoryGrid>
           
 </template>
 
