@@ -4,9 +4,9 @@
   <v-row class="d-flex justify-center align-center my-4 no-gutters">
     <v-col cols="12" md="8" class="d-flex justify-center">
       <v-row class="d-flex justify-center align-center" no-gutters>
-        <v-col cols="12" sm="6" md="4" class="d-flex justify-center">
-          <v-card class="side-card d-flex flex-column align-center p-4">
-            <div class="d-flex justify-center align-center flex-column mt-3">
+        <v-col cols="12" sm="12" md="4" class="d-flex justify-center">
+          <v-card class="side-card d-flex flex-column align-center p-4 mx-2 mx-md-0">
+            <div class="d-flex justify-center align-center flex-column mt-3 ">
               <v-icon size="x-large" class="icon">mdi-qrcode-scan</v-icon>
               <v-card-title>CREDENCIAMENTO</v-card-title>
             </div>
@@ -17,9 +17,9 @@
           </v-card>
         </v-col>
 
-        <v-col cols="12" sm="6" md="4" class="d-flex justify-center">
+        <v-col cols="12" sm="12" md="4" class="d-flex justify-center">
           <v-card
-            class="side-card d-flex flex-column align-center p-4 card-center"
+            class="side-card d-flex flex-column align-center p-4 card-center mx-2 mx-md-0"
           >
             <div class="d-flex justify-center align-center flex-column mt-3">
               <v-icon class="icon" size="x-large"
@@ -34,8 +34,8 @@
           </v-card>
         </v-col>
 
-        <v-col cols="12" sm="6" md="4" class="d-flex justify-center">
-          <v-card class="side-card d-flex flex-column align-center p-4">
+        <v-col cols="12" sm="12" md="4" class="d-flex justify-center">
+          <v-card class="side-card d-flex flex-column align-center p-4 mx-2 mx-md-0">
             <div class="d-flex justify-center align-center flex-column mt-3">
               <v-icon size="x-large" class="icon"
                 >mdi-lightning-bolt-outline</v-icon
@@ -54,8 +54,8 @@
 
 <style scoped>
 .side-card {
-  max-width: 256px;
-  height: 192px;
+  width: 100%;
+  height: 200px;
 }
 
 .card-center {

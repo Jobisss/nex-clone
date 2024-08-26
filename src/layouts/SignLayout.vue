@@ -2,10 +2,12 @@
   import FooterBar from '@/components/layout/FooterBar.vue';
 </script>
 <template>
-    <v-main>
+<div>
+  <v-main>
       <slot></slot>
     </v-main>
     <footer-bar/>
+</div>
 </template>
 
 

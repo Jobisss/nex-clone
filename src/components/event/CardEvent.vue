@@ -54,7 +54,7 @@ const {category, id ,photo ,slug ,title, mobile, fixed } = defineProps(['categor
       </div>
 
       <v-card-actions>
-        <v-btn color="primary" block>
+        <v-btn color="primary" block border>
           Ingressos Disponíveis
           <v-icon size="large">mdi-chevron-right</v-icon>
         </v-btn>
