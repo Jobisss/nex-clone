@@ -26,7 +26,7 @@
         </v-list-item>
       </v-list>
     </v-menu>
-    <SearchInput v-model="model" :events="events" class="mr-1"/>
+    <SearchInput v-model="model" class="mr-1"/>
   </v-container>
 </template>
   

@@ -19,9 +19,8 @@ const route = useRoute()
           </h1>
         </div>
 
-        <SearchInput />
+        <SearchInput e/>
 
-        <HighlightEvents class="my-3" />
 
         <div class="d-flex justify-center my-2 align-center">
           <v-btn

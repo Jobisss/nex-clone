@@ -5,8 +5,6 @@ import SearchEvents from "@/components/event-sale/SearchEvents.vue";
 import CarrouselEvents from "@/components/event/CarrouselEvents.vue";
 import { getCategory } from "@/utils/getCategory";
 import CategoryGrid from "@/components/category/CategoryGrid.vue";
-import useEventParticipantHook from "@/composables/useEventParticipantApi";
-const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook()
 const route = useRoute()
 const nameCategory = ref(getCategory(route.params.category))
 const events = ref([])

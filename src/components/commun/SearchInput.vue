@@ -34,12 +34,7 @@ const onClick = () => {
   }, 2000);
 };
 
-const props = defineProps({
-  events: {
-    type: Array,
-    required: true,
-  },
-});
+
 
 let searchEvent = ref("");
 
