@@ -2,7 +2,7 @@
   <v-footer class="text-center d-flex bottom-0 flex-column bg-surface w-100">
     <v-row class="d-flex justify-space-between w-100 align-center flex-wrap mt-5 flex-column flex-md-row py-7'">
       <v-col>
-        <img src="../assets/logo.png" class="icon-image" alt="" width="64" height="64" />
+        <img src="../../assets/icons/nex.png" class="icon-image" alt="" width="64" height="64" />
       </v-col>
 
       <v-col class="mb-3 mb-md-0">
@@ -36,7 +36,6 @@
         color="white"
         height="28"
         width="28"
-        xmlns="http://www.w3.org/2000/svg"
         style="color: white"
       >
         <path
@@ -52,7 +51,6 @@
         color="white"
         height="24"
         width="24"
-        xmlns="http://www.w3.org/2000/svg"
         style="color: white"
       >
         <path
@@ -68,7 +66,6 @@
         color="white"
         height="36"
         width="36"
-        xmlns="http://www.w3.org/2000/svg"
         style="color: white"
       >
         <path
@@ -84,7 +81,6 @@
         color="white"
         height="36"
         width="36"
-        xmlns="http://www.w3.org/2000/svg"
         style="color: white"
       >
         <path

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 let show = ref(false)
-let { label, errorField, message, link } = defineProps<{ label: string, errorField : string | undefined, message? : string, link? : string }>()
+let { label, errorField, message, link } = defineProps(['label', 'errorField', 'message', 'link'])
 let model = defineModel()
 </script>
 <template>

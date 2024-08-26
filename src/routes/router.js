@@ -1,6 +1,8 @@
 import Category from "@/pages/public/Category.vue";
 import EventSale from "@/pages/public/EventSale.vue";
 import Homepage from "@/pages/public/Home.vue";
+import Signin from "@/pages/public/signin.vue";
+import Signup from "@/pages/public/signup.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -38,7 +40,7 @@ const routes = [
   },
   {
     path : '/signin', 
-    component : Homepage,
+    component : Signin,
     name : 'signin',
     meta : {
       layout : 'sign-layout'
@@ -46,7 +48,7 @@ const routes = [
   },
   {
     path : '/signup', 
-    component : Homepage,
+    component : Signup,
     name : 'signup',
     meta : {
       layout : 'sign-layout'

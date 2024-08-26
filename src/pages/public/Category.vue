@@ -1,13 +1,31 @@
 <script setup>
-import { useRoute } from 'vue-router';
-import defineLayout from '@/layouts/defineLayout';
-defineLayout()
-const route = useRoute()
+
+import { useRoute } from "vue-router";
+import { watch, ref } from "vue";
+import EventSale from "./EventSale.vue";
+import { getCategory } from "@/utils/getCategory";
+const route = useRoute();
+const eventId = ref(route.params.id);
+const nameCategory = ref(getCategory(route.params.id))
+
+watch(
+    () => route.path,
+    (newPath) => {
+        eventId.value = route.params.id;
+        nameCategory.value = getCategory(eventId.value)
+    }
+);
+
 </script>
 <template>
-    <p>test {{ route.params.category }}</p>
+    <div>
+        <SearchEvents />
+        {{ nameCategory }}
+        <CategoryEvents :category="nameCategory" />
+        <pre>
+            {{ eventId }}
+        </pre>
+    </div>
 </template>
 
-
-<style scoped>
-</style>
+<style scoped></style>

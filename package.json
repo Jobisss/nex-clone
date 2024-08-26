@@ -8,11 +8,14 @@
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
+    "@vee-validate/zod": "^4.13.2",
     "pinia": "^2.2.2",
     "roboto-fontface": "*",
+    "vee-validate": "^4.13.2",
     "vue": "^3.4.31",
     "vue-router": "^4.4.3",
-    "vuetify": "^3.6.11"
+    "vuetify": "^3.6.11",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
