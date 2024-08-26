@@ -1,0 +1,1 @@
+export const BASE_IMAGE_URL = "https://nex-event.s3.amazonaws.com/";

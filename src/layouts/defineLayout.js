@@ -11,7 +11,6 @@ const layouts = {
 
 const regex = /^(.*?)-layout$/
 export default function defineLayout(layoutName) { 
-  console.log(layoutName)
   let layoutsName = Object.keys(layouts).map( layout => {
     return `${layout}-layout`
   } )
@@ -21,7 +20,6 @@ export default function defineLayout(layoutName) {
   }
 
   const match = layoutName.match(regex);
-  console.log(layouts[match[1]])
   return layouts[match[1]]
   
 }
