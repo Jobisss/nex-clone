@@ -11,6 +11,7 @@
     >
       <CardEvent
         class="mx-2 w-100"
+        width="100%"
         :slug="event.slug"
         :id="event.id"
         :title="event.title"
