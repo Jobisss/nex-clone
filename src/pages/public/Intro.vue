@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div class="d-flex align-center justify-center pa-4 pa-md-8">
+    <div class="d-flex align-center justify-center pa-4 px-md-16">
       <v-img
         v-if="$vuetify.display.smAndDown"
         src="../../assets/event-info/banner-mobile-dark.svg"
-        class="centered-img mt-2"
+        class="mt-2"
       ></v-img>
 
       <v-img
         v-else
         src="../../assets/event-info/banner-dark.svg"
-        class="centered-img mt-2"
+        class=" mt-2"
       ></v-img>
     </div>
 
@@ -20,7 +20,7 @@
         class="centered-img d-none d-sm-flex"
       ></v-img>
 
-      <div class="d-flex justify-center my-4">
+      <div class="d-flex justify-center">
         <v-btn
           style="
             background-color: #38be92;
@@ -28,6 +28,7 @@
             font-weight: bold;
             width: 160px;
           "
+          :to="{ name: 'signup' }"
         >
           Começar
         </v-btn>
@@ -69,7 +70,7 @@
               class="d-flex justify-center mt-5 flex-column text-xs-center text-md-center text-sm-center text-lg-start"
               style="flex-basis: inherit"
             >
-              <h3 class="mt-lg-10">Credenciamento Facial</h3>
+              <h3>Credenciamento Facial</h3>
               <p class="text-recurse">
                 Credenciamento rápido e seguro com reconhecimento facial.
               </p>
@@ -95,7 +96,7 @@
             >
               <v-img
                 src="../../assets/event-info/dashboard-image.png"
-                class="centered-img"
+                class="centered-img mt-14"
                 rounded
               ></v-img>
             </v-col>
@@ -116,11 +117,11 @@
           lg="6"
           class="d-flex justify-center flex-column p-10"
         >
-          <h1 class="text-center text-lg-start text-white">
+          <h1 class="text-center text-white">
             Crie Seus eventos com facilidade
           </h1>
 
-          <p class="text-center text-lg-start">
+          <p class="text-center">
             Nossos sistema de credenciamento facial e venda de ingressos online
             torna a organização de eventos muito mais simples e eficiente
           </p>
@@ -133,6 +134,7 @@
         >
           <v-btn
             style="background-color: #fff; color: #38be92; font-weight: bold"
+            :to="{ name: 'signup' }"
           >
             EXPERIMENTE AGORA
           </v-btn>
@@ -152,6 +154,8 @@ const route = useRoute();
 </script>
 
 <style scoped>
+
+
 .text-recurse {
   margin-bottom: 5%;
   text-align: center;
@@ -175,7 +179,6 @@ p {
 .centered-img {
   width: 80%;
   height: 80%;
-  margin-top: 70px;
 }
 
 .p-10 {
@@ -185,7 +188,6 @@ p {
 .full-screen {
   width: 100vw;
 }
-
 
 @media (min-width: 600px) {
   .v-container {
