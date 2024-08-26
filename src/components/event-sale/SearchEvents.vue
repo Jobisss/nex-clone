@@ -26,8 +26,7 @@
         </v-list-item>
       </v-list>
     </v-menu>
-
-    <SearchInput :events="events" class="mr-1"/>
+    <SearchInput v-model="model" :events="events" class="mr-1"/>
   </v-container>
 </template>
   
@@ -35,17 +34,8 @@
 import { useCategory } from "@/stores/useCategory";
 import SearchInput from "../commun/SearchInput.vue";
 
-const props = defineProps({
-  events: {
-    type: Array,
-    required: true,
-  },
+const model = defineModel()
 
-  searchQuery: {
-    type: String,
-    default: "",
-  },
-});
 const store = useCategory();
 </script>
   
