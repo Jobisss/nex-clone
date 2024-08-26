@@ -3,7 +3,22 @@ import { useRoute } from 'vue-router';
 import SearchInput from '@/components/commun/SearchInput.vue';
 const route = useRoute()
 
+import useEventParticipantHook from '../../composables/useEventParticipantApi';
+import { ref, onMounted } from 'vue';
 
+const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
+
+const events = ref([]);
+
+onMounted(async () => {
+  try {
+    const { data } = await eventParticipantControllerFindAllPublicEvents(10, 1, '', '');
+    events.value = data || []; // Atualizando o estado com os dados recebidos
+    console.log(events.value.data)
+  } catch (error) {
+    console.error('Failed to fetch events:', error);
+  }
+});
 
 </script>
 <template>
