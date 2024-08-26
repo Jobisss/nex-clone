@@ -1,5 +1,41 @@
 <template>
   <div>
+    <div class="d-flex align-center justify-center pa-4 pa-md-8">
+      <v-img
+        v-if="$vuetify.display.smAndDown"
+        src="../../assets/event-info/banner-mobile-dark.svg"
+        class="centered-img mt-2"
+      ></v-img>
+
+      <v-img
+        v-else
+        src="../../assets/event-info/banner-dark.svg"
+        class="centered-img mt-2"
+      ></v-img>
+    </div>
+
+    <div class="d-flex align-center justify-center flex-column">
+      <v-img
+        src="../../assets/event-info/image1.png"
+        class="centered-img d-none d-sm-flex"
+      ></v-img>
+
+      <div class="d-flex justify-center my-4">
+        <v-btn
+          style="
+            background-color: #38be92;
+            color: #fff;
+            font-weight: bold;
+            width: 160px;
+          "
+        >
+          Começar
+        </v-btn>
+      </div>
+    </div>
+
+    <CardSkills />
+
     <v-container
       class="d-flex justify-center"
       style="background-color: #38be9233; max-width: 2000px"
@@ -84,7 +120,7 @@
             Crie Seus eventos com facilidade
           </h1>
 
-          <p>
+          <p class="text-center text-lg-start">
             Nossos sistema de credenciamento facial e venda de ingressos online
             torna a organização de eventos muito mais simples e eficiente
           </p>
@@ -110,6 +146,8 @@
 
 <script setup>
 import { useRoute } from "vue-router";
+import CardSkills from "../../components/event-info/CardSkills.vue";
+
 const route = useRoute();
 </script>
 
@@ -144,6 +182,11 @@ p {
   padding: 40px;
 }
 
+.full-screen {
+  width: 100vw;
+}
+
+
 @media (min-width: 600px) {
   .v-container {
     padding: 24px; /* Padding for tablets */
@@ -160,4 +203,3 @@ p {
   }
 }
 </style>
-
