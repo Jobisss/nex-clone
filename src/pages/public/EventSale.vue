@@ -19,7 +19,6 @@ onMounted(async () => {
     const response = await eventParticipantControllerFindAllPublicEvents(100, 1, '', '')
     eventsMoreViews.value = data || []; // Atualizando o estado com os dados recebidos
     eventAll.value = response.data.data || []
-    console.log(eventAll.value)
     loading.value = false
   } catch (error) {
     console.error('Failed to fetch events:', error);
@@ -33,7 +32,7 @@ onMounted(async () => {
     <div v-if="!loading">
       <h1 class="text-center text-sm-start ml-0 ml-sm-6">Evento em Destaque</h1>
       <CategoryGrid :events="eventsMoreViews" />
-      <div v-for="category in store.categories" v-show="eventAll.filter( event => event.category === category.title ).length > 0">
+      <div v-for="category, index in store.categories" :key="index" v-show="eventAll.filter( event => event.category === category.title ).length > 0">
         
         <h1 class="text-center text-sm-start ml-0 ml-sm-6">Evento de {{ category.title }}</h1>
         <CategoryGrid  :events="eventAll.filter( event => event.category === category.title )" />

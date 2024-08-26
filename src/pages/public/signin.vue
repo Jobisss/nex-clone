@@ -29,6 +29,7 @@ const submit = handleSubmit(values => {
 </script>
 
 <template>
+<div>
     <SignBackground title="Bem Vindo!" subtitle="Por favor, insira seus dados para acessar." :schema="schema">
         <template v-slot:form>
             <form @submit.prevent="submit" class="d-flex flex-column align-center w-100 ga-2">
@@ -65,7 +66,7 @@ const submit = handleSubmit(values => {
 
     </SignBackground>
     <div class="my-5"></div>
-    <FooterBar />
+</div>
 </template>
 
 
