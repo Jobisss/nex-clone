@@ -22,7 +22,7 @@ watch(events, () => {
     <div v-if="events.length !== 0" style="margin-bottom: 15%">
       <v-slide-group v-if="!isSmall" show-arrows>
         <v-slide-group-item v-for="event in events" :key="event.id">
-          <CardEvent class="mx-2" :slug="event.slug" :id="event.id" :title="event.title" :category="event.category"
+          <CardEvent :fixed="true" class="mx-2" :slug="event.slug" :id="event.id" :title="event.title" :category="event.category"
             :photo="event.photo" />
         </v-slide-group-item>
       </v-slide-group>

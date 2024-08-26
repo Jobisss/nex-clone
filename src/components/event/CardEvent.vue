@@ -2,13 +2,14 @@
 import { BASE_IMAGE_URL } from '@/utils/getConstants';
 import { firstAndLastWordFirstLetters } from '@/utils/getNameInitials';
 
-const {category, id ,photo ,slug ,title, mobile} = defineProps(['category', 'id', 'photo', 'title', 'mobile'])
+const {category, id ,photo ,slug ,title, mobile, fixed } = defineProps(['category', 'id', 'photo', 'title', 'mobile','fixed'])
+
 
   
 </script>
 <template>
   <router-link to="/" class="w-100">
-    <v-card class="rounded-lg card w-100">
+    <v-card class="rounded-lg card " :class="{ 'fixed-content' : fixed, 'full' : !fixed }" height="350px">
       <v-img
         v-if="photo"
         height="160"
@@ -16,6 +17,7 @@ const {category, id ,photo ,slug ,title, mobile} = defineProps(['category', 'id'
         cover
         rounded
         class="mb-2 position-relative rounded-lg "
+        width="300px"
         :class="{'w-100' : $vuetify.display.smAndDown}"
       ></v-img>
       <v-sheet
@@ -73,6 +75,14 @@ a {
 
 .card:hover {
   filter: brightness(1.05);
+}
+
+.fixed-content { 
+   width: 300px;
+}
+
+.full { 
+  width: 100%;
 }
 
 .card-size { 
