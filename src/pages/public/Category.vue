@@ -4,6 +4,12 @@ import { watch, ref, onMounted } from "vue";
 import SearchEvents from "@/components/event-sale/SearchEvents.vue";
 import CarrouselEvents from "@/components/event/CarrouselEvents.vue";
 import { getCategory } from "@/utils/getCategory";
+import useEventParticipantHook from "@/composables/useEventParticipantApi";
+const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook()
+const route = useRoute()
+const nameCategory = ref(getCategory(route.params.category))
+const events = ref([])
+
 
 
 
@@ -77,12 +83,16 @@ const mockEvents = [
 ];
 
 
-const route = useRoute()
-const nameCategory = ref(getCategory(route.params.category))
-const events = ref([])
+
+
+
+const fetchEvents = async (categoryParams) => {
+  console.log(categoryParams, "Category")
+  const response = await eventParticipantControllerFindAllPublicEvents("100", '1', undefined, categoryParams)
+  console.log(response)
+}
 
 onMounted(()=> {
-    console.log(mockEvents)
     events.value = mockEvents
 })
 
@@ -91,8 +101,11 @@ watch(
      (newPath) => {
          nameCategory.value = getCategory(route.params.category)
          console.log(nameCategory.value)
+         fetchEvents(getCategory(nameCategory.value))
      }
  );
+
+
 
 </script>
 <template>

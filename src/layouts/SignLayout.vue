@@ -1,10 +1,11 @@
 <script setup>
+  import FooterBar from '@/components/layout/FooterBar.vue';
 </script>
 <template>
     <v-main>
       <slot></slot>
     </v-main>
-    <footer>footer</footer>
+    <footer-bar/>
 </template>
 
 
