@@ -1,93 +1,88 @@
-import { eventParticipantApi } from "@/services/api";
+// src/hooks/useEventParticipantHook.js
+import api from '@/services/api'; // Importe a instância do Axios
 
-function useEventParticipantHook() { 
-    const eventParticipantControllerFindAllPublicEvents = async ( 
-        perPage,
-        page ,
-        title,
-        category
-      ) => {
-        try {
-          const { data, status, statusText } =
-            await eventParticipantApi.eventParticipantControllerFindAllPublicEvents(
-              page,
-              perPage,
-              title,
-              category
-            );
-          return {
-            status: status,
-            message: statusText,
-            data: data,
-          };
-        } catch (error) {
-            console.log('error', error)
-          return {
-            status: error.response.data.statusCode,
-            message: error.response.data.message,
-          };
-        }
-      };
-      const eventParticipantControllerFindOnePublicEvent = async (slug ) => {
-        try {
-          const { data, status, statusText } =
-            await eventParticipantApi.eventParticipantControllerFindOnePublicEvent(
-              slug
-            );
-          return {
-            status: status,
-            message: statusText,
-            data: data,
-          };
-        } catch (error ) {
-          return {
-            status: error.response.data.statusCode,
-            message: error.response.data.message,
-          };
-        }
-      };
-    
-      const eventParticipantControllerGetEventsMoreView = async () => {
-        try {
-          const { data, status, statusText } =
-            await eventParticipantApi.eventParticipantControllerGetEventsMoreView();
-          return {
-            status: status,
-            message: statusText,
-            data: data,
-          };
-        } catch (error ) {
-          return {
-            status: error.response.data.statusCode,
-            message: error.response.data.message,
-          };
-        }
-      };
-
-      const eventParticipantControllerFindAllPublicEventsHome = async () => {
-        try {
-          const { data, status, statusText } =
-            await eventParticipantApi.eventParticipantControllerFindAllPublicEventsHome();
-          return {
-            status: status,
-            message: statusText,
-            data: data,
-          };
-        } catch (error) {
-          return {
-            status: error.response.data.statusCode,
-            message: error.response.data.message,
-          };
-        }
-      };
-    
-
+function useEventParticipantHook() {
+  const eventParticipantControllerFindAllPublicEvents = async (
+    perPage,
+    page,
+    title,
+    category
+  ) => {
+    try {
+      const { data, status, statusText } = await api.get('/event-participant/v1/event-participant/find-all-events-public', {
+        params: { page, perPage, title, category }
+      });
       return {
-        eventParticipantControllerFindAllPublicEvents,
-        eventParticipantControllerFindOnePublicEvent,
-        eventParticipantControllerGetEventsMoreView,
-        eventParticipantControllerFindAllPublicEventsHome,
+        status,
+        message: statusText,
+        data,
       };
+    } catch (error) {
+      console.error('Error:', error);
+      return {
+        status: error.response?.status || 500,
+        message: error.response?.data?.message || 'An error occurred',
+      };
+    }
+  };
+
+  const eventParticipantControllerFindOnePublicEvent = async (slug) => {
+    try {
+      const { data, status, statusText } = await api.get(`/events/${slug}`);
+      return {
+        status,
+        message: statusText,
+        data,
+      };
+    } catch (error) {
+      console.error('Error:', error);
+      return {
+        status: error.response?.status || 500,
+        message: error.response?.data?.message || 'An error occurred',
+      };
+    }
+  };
+
+  const eventParticipantControllerGetEventsMoreView = async () => {
+    try {
+      const { data, status, statusText } = await api.get('/events/more-view');
+      return {
+        status,
+        message: statusText,
+        data,
+      };
+    } catch (error) {
+      console.error('Error:', error);
+      return {
+        status: error.response?.status || 500,
+        message: error.response?.data?.message || 'An error occurred',
+      };
+    }
+  };
+
+  const eventParticipantControllerFindAllPublicEventsHome = async () => {
+    try {
+      const { data, status, statusText } = await api.get('/events/home');
+      return {
+        status,
+        message: statusText,
+        data,
+      };
+    } catch (error) {
+      console.error('Error:', error);
+      return {
+        status: error.response?.status || 500,
+        message: error.response?.data?.message || 'An error occurred',
+      };
+    }
+  };
+
+  return {
+    eventParticipantControllerFindAllPublicEvents,
+    eventParticipantControllerFindOnePublicEvent,
+    eventParticipantControllerGetEventsMoreView,
+    eventParticipantControllerFindAllPublicEventsHome,
+  };
 }
 
 export default useEventParticipantHook;
