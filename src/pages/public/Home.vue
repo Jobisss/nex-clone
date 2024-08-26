@@ -2,19 +2,20 @@
 import { useRoute } from 'vue-router';
 import SearchInput from '@/components/commun/SearchInput.vue';
 const route = useRoute()
-
+import CarrouselEvents from '@/components/event/CarrouselEvents.vue';
 import useEventParticipantHook from '../../composables/useEventParticipantApi';
 import { ref, onMounted } from 'vue';
 
 const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
 
 const events = ref([]);
+const loading = ref(true)
 
 onMounted(async () => {
   try {
     const { data } = await eventParticipantControllerFindAllPublicEvents(10, 1, '', '');
-    events.value = data || []; // Atualizando o estado com os dados recebidos
-    console.log(events.value.data)
+    events.value = data.data || []; // Atualizando o estado com os dados recebidos
+    loading.value = false
   } catch (error) {
     console.error('Failed to fetch events:', error);
   }
@@ -34,8 +35,13 @@ onMounted(async () => {
           </h1>
         </div>
 
-        <SearchInput />
-
+        <SearchInput/>
+        <div v-if="!loading">
+          <CarrouselEvents :events="events"/>
+        </div>
+        <div v-else>
+          <p>Loading...</p>
+        </div>
 
         <div class="d-flex justify-center my-2 align-center">
           <v-btn
