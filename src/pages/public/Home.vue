@@ -34,7 +34,7 @@ onMounted(async () => {
           </h1>
         </div>
 
-        <SearchInput e/>
+        <SearchInput />
 
 
         <div class="d-flex justify-center my-2 align-center">
