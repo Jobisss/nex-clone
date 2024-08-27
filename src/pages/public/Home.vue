@@ -39,7 +39,7 @@ const filtredEvents = computed(() => {
             Só os
             <strong style="color: #f2af29">melhores </strong>
             <strong style="color: #38be92">eventos</strong>
-            para você na nossa plataforma
+            para você na nossa plataforma.
           </h1>
         </div>
 
@@ -59,6 +59,7 @@ const filtredEvents = computed(() => {
               font-weight: bold;
               width: 200px;
             "
+            :to="{ name: 'event' }"
           >
             Ver mais Eventos
             <v-icon size="large">mdi-chevron-right</v-icon>
@@ -86,9 +87,10 @@ const filtredEvents = computed(() => {
             class="d-flex justify-center flex-column align-center mt-6 mt-md-0"
           >
             <v-btn
-              style="background-color: #fff; color: #38be92; font-weight: bold"
+              style="background-color: #38be9233; color: #fff; font-weight: bold"
+              :to="{ name: 'event' }"
             >
-              Ver mais Eventos <v-icon size="large">mdi-chevron-right</v-icon>
+              Todos os Eventos <v-icon size="large">mdi-chevron-right</v-icon>
             </v-btn>
           </v-col>
         </v-row>
