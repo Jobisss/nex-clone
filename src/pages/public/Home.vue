@@ -97,7 +97,7 @@ const filtredEvents = computed(() => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .title h1 {
   width: 70vh;
   font-size: 3.1rem;

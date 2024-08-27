@@ -49,7 +49,8 @@ const filtredEvents = computed(() => {
     <div v-if="filtredEvents.length > 0">
       <CategoryGrid :events="filtredEvents"></CategoryGrid>
     </div> 
-    <p v-else class="ml-6">Nenhum evento foi encontrado</p>
+    <p v-else class="mr-6">Nenhum eventos foi encontrado</p>
   </div>
 </template>
 
+<style scoped></style>
