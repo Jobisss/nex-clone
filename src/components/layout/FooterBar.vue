@@ -2,7 +2,9 @@
   <v-footer class="text-center d-flex bottom-0 flex-column bg-surface w-100">
     <v-row class="d-flex justify-space-between w-100 align-center flex-wrap mt-5 flex-column flex-md-row py-7'">
       <v-col>
-        <img src="../../assets/icons/nex.png" class="icon-image" alt="" width="64" height="64" />
+        <router-link :to="{ name : 'home' }">
+          <img src="../../assets/icons/nex.png"  class="icon-image" alt="" width="64" height="64" />
+        </router-link>
       </v-col>
 
       <v-col class="mb-3 mb-md-0">

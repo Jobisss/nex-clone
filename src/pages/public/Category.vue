@@ -46,10 +46,10 @@ const filtredEvents = computed(() => {
 <template>
   <div>
     <SearchEvents v-model="query"></SearchEvents>
-    <div>
+    <div v-if="filtredEvents.length > 0">
       <CategoryGrid :events="filtredEvents"></CategoryGrid>
-    
     </div> 
+    <p v-else class="ml-6">Nenhum evento foi encontrado</p>
   </div>
 </template>
 
