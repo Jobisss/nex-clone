@@ -6,7 +6,6 @@ import { useMenuStore } from "../../stores/useMenu"
 const store = useCategory();
 const menuContext = useMenuStore();
 
-console.log(store)
 
 
 

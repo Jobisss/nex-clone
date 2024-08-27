@@ -4,17 +4,14 @@ import { useCategory } from "../../stores/useCategory";
 import { useMenuStore } from "../../stores/useMenu"
 import { useUserStore } from "@/stores/useUser";
 import { useRouter } from "vue-router";
-import { ref } from "vue";
 import { useTheme } from "vuetify";
 const  menuContext  = useMenuStore();
 const router = useRouter()
 const user = useUserStore()
 const store  = useCategory();
 const theme = useTheme()
-console.log(theme.current.value)
 
 function onCLick() { 
-   console.log('clicked', theme.global.name.value)
    let newVal = theme.global.name.value === 'dark' ? 'light' : 'dark' 
     theme.global.name.value = newVal
 }
