@@ -2,6 +2,7 @@
 
 import { useCategory } from "../../stores/useCategory";
 import { useMenuStore } from "../../stores/useMenu"
+import { useUserStore } from "@/stores/useUser";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
 const  menuContext  = useMenuStore();
@@ -20,7 +21,6 @@ const menu = ref(false)
     height="89"
     scroll-behavior="fade-image"
   >
-   <v-app-bar class="px-5" density="comfortable" flat floating height="89" scroll-behavior="fade-image">
     <template #prepend>
       <div class="mr-5">
         <v-app-bar-nav-icon @click.stop="menuContext.changeMenu()" class="d-sm-none" slim size="50"></v-app-bar-nav-icon>
@@ -91,7 +91,7 @@ const menu = ref(false)
             <v-list-item>
               <v-btn @click="user.removeUserData(router)" color="red-lighten-1" class=" d-flex align-center justify-start w-100">
                 <template #prepend align="left">
-                  <v-icon>mdi-view-dashboard</v-icon>
+                  <v-icon>mdi-logout</v-icon>
                 </template>
                 Sair
                
