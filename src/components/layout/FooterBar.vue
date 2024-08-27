@@ -1,32 +1,41 @@
 <template>
   <v-footer class="text-center d-flex bottom-0 flex-column bg-surface w-100">
-    <v-row class="d-flex justify-space-between w-100 align-center flex-wrap mt-5 flex-column flex-md-row py-7'">
+    <v-row
+      class="d-flex justify-space-between w-100 align-center flex-wrap mt-5 flex-column flex-md-row py-7'"
+    >
       <v-col>
-        <router-link :to="{ name : 'home' }">
-          <img src="../../assets/icons/nex.png"  class="icon-image" alt="" width="64" height="64" />
+        <router-link :to="{ name: 'home' }">
+          <img
+            src="../../assets/icons/nex.png"
+            class="icon-image"
+            alt=""
+            width="64"
+            height="64"
+          />
         </router-link>
       </v-col>
 
       <v-col class="mb-3 mb-md-0">
-        <div class="f-16 my-3">
-          NexEvent - Eventos
-        </div>
+        <div class="f-16 my-3">NexEvent - Eventos</div>
       </v-col>
 
-      <v-col >
+      <v-col>
         <div>
           <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            :icon="icon"
+            v-for="(item, index) in items"
+            :href="item.to"
+            :key="index"
+            :icon="item.icon"
             class=""
             variant="text"
+            target="_blank"
+            rel="noopener noreferrer"
           ></v-btn>
         </div>
       </v-col>
     </v-row>
 
-    <hr class="w-75 my-5">
+    <hr class="w-75 my-5" />
 
     <div class="d-flex justify-center align-center">
       <svg
@@ -130,7 +139,20 @@
 </template>
 
 <script setup>
-const icons = ["mdi-facebook", "mdi-twitter", "mdi-instagram"];
+const items = [
+  {
+    icon: "mdi-facebook",
+    to: "https://www.facebook.com/neziomonteiro0/",
+  },
+  {
+    icon: "mdi-twitter",
+    to: "https://x.com/neziomonteiro/",
+  },
+  {
+    icon: "mdi-instagram",
+    to: "https://www.instagram.com/neziomonteiro/",
+  },
+];
 </script>
 
 <style scoped>
@@ -138,18 +160,17 @@ const icons = ["mdi-facebook", "mdi-twitter", "mdi-instagram"];
   font-size: 16px;
 }
 
-hr{
+hr {
   opacity: 20%;
-
 }
 
-.icon-image{
+.icon-image {
   filter: saturate(0);
 }
 
-.icon-image:hover{
+.icon-image:hover {
   filter: saturate(1);
   cursor: pointer;
-  transition:0.4s all;
+  transition: 0.4s all;
 }
 </style>

@@ -20,12 +20,12 @@ const { postFormLogin, getUserData } = useAthApiHook()
 const router = useRouter()
 const snackbar = ref(false)
 const schema = z.object({
-    email: z.string().email({ message: "Email inválido" }),
+    email: z.string().email({ message: "Email inválido." }),
     password: z.string()
-        .min(5, { message: "Minimo de 10 caracteres" })
-        .regex(/[A-Z]/, { message: "Deve ter no minimo uma letra maiúscula " })
-        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "A senha deve conter pelo menos um caractere especial" })
-        .regex(/\d/, "A senha deve conter pelo menos um dígito"),
+        .min(8, { message: "Mínimo de 8 caracteres." })
+        .regex(/[A-Z]/, { message: "Deve ter no mínimo uma letra maiúscula. " })
+        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "A senha deve conter pelo menos um caractere especial." })
+        .regex(/\d/, "A senha deve conter pelo menos um dígito."),
 })
 
 const { values, defineField, errors, handleSubmit, handleReset, setErrors } = useForm({

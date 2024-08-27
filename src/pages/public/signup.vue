@@ -8,15 +8,15 @@ import z from 'zod'
 const schema = z.object({
     email: z.string().email({message : "Email inválido"}),
     password: z.string()
-        .min(10, { message: "Minimo de 10 letras" })
-        .regex(/[A-Z]/, { message: "Deve ter no minimo uma letra maiúscula " })
-        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "A senha deve conter pelo menos um caractere especial" })
-        .regex(/\d/, "A senha deve conter pelo menos um dígito"),
+        .min(8, { message: "Minimo de 8 letras." })
+        .regex(/[A-Z]/, { message: "Deve ter no mínimo uma letra maiúscula. " })
+        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "A senha deve conter pelo menos um caractere especial." })
+        .regex(/\d/, "A senha deve conter pelo menos um dígito."),
     repeat: z.string()
-        .min(10, { message: "Minimo de 10 letras" })
-        .regex(/[A-Z]/, { message: "Deve ter no minimo uma letra maiúscula " })
-        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "A senha deve conter pelo menos um caractere especial" })
-        .regex(/\d/, "A senha deve conter pelo menos um dígito"),
+        .min(8, { message: "Mínimo de 8 letras." })
+        .regex(/[A-Z]/, { message: "Deve ter no minimo uma letra maiúscula. " })
+        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "A senha deve conter pelo menos um caractere especial." })
+        .regex(/\d/, "A senha deve conter pelo menos um dígito."),
     confirm: z.boolean().default(false).refine((check) => check === true, { message: "Aceite os termos" })
 })
 

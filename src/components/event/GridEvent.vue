@@ -18,7 +18,10 @@
         :title="event.title"
         :category="event.category"
         :photo="event.photo"
+        :city="event.city"
+        :state="event.state"
       />
+
     </v-col>
   </v-row>
 </template>
@@ -36,6 +39,7 @@ const props = defineProps({
     default: "",
   },
 });
+
 
 
 const filteredEvents = computed(() => {

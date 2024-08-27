@@ -19,7 +19,6 @@ import { ref, computed, defineProps } from "vue";
 
 
 
-// Define a largura do campo de texto dinamicamente
 const inputStyle = computed(() => ({
   maxWidth: "380px",
   width: "100%",
@@ -36,7 +35,7 @@ const onClick = () => {
 
 
 
-let searchEvent = ref("");
+
 
 
 </script>
