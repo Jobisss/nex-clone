@@ -7,7 +7,7 @@ const {category, id ,photo ,slug ,title, mobile, fixed } = defineProps(['categor
 </script>
 <template>
   <router-link to="/" class="w-100">
-    <v-card class="rounded-lg card " :class="{ 'fixed-content' : fixed, 'full' : !fixed }" height="350px">
+    <v-card class="rounded-lg card " :class="{ 'fixed-content' : fixed, 'w-100' : !fixed }" height="350px">
       <v-img
         v-if="photo"
         height="160"
@@ -28,7 +28,7 @@ const {category, id ,photo ,slug ,title, mobile, fixed } = defineProps(['categor
       </v-sheet>
 
       <v-chip
-        color="background2"
+        color="background"
         variant="flat"
         class="position-absolute elevation-5"
         style="top: 5px; left: 5px"
@@ -78,9 +78,6 @@ a {
    width: 300px;
 }
 
-.full { 
-  width: 100%;
-}
 
 .card-size { 
    width: 25vw;

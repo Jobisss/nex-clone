@@ -53,4 +53,3 @@ const filtredEvents = computed(() => {
   </div>
 </template>
 
-<style scoped></style>

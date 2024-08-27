@@ -49,7 +49,7 @@
         >
           <p><strong>Principais recursos</strong></p>
 
-          <h1 class="my-3">Tudo o que você precisa para organizar eventos.</h1>
+          <h1 class="my-3 text-primary">Tudo o que você precisa para organizar eventos.</h1>
 
           <p>
             <strong>
@@ -67,7 +67,7 @@
               sm="12"
               md="12"
               lg="6"
-              class="d-flex justify-center mt-5 flex-column text-xs-center text-md-center text-sm-center text-lg-start"
+              class="d-flex justify-center mt-5 flex-column text-xs-center text-md-center text-sm-center text-lg-start infos"
               style="flex-basis: inherit"
             >
               <h3>Credenciamento Facial</h3>
@@ -115,7 +115,7 @@
           sm="12"
           md="12"
           lg="6"
-          class="d-flex justify-center flex-column p-10"
+          class="d-flex justify-center flex-column pa-10"
         >
           <h1 class="text-center text-white">
             Crie Seus eventos com facilidade
@@ -161,15 +161,13 @@ const route = useRoute();
   text-align: center;
 }
 
+
+
 h3 {
   color: #38be92;
   text-transform: uppercase;
   font-weight: 500;
   text-align: center;
-}
-
-h1 {
-  color: #38be92;
 }
 
 p {
@@ -181,9 +179,7 @@ p {
   height: 80%;
 }
 
-.p-10 {
-  padding: 40px;
-}
+
 
 .full-screen {
   width: 100vw;

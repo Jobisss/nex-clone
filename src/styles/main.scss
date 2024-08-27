@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'mixins';
+@import 'components';
+@import 'global';
+
+
+:root {
+    --primary-color-dark: #{$primary-color-dark};
+    --secondary-color-dark: #{$secondary-color-dark};
+    --background-color-dark: #{$background-color-dark};
+    --surface-color-dark: #{$surface-color-dark};
+    --highlight-color-dark: #{$highlight-color-dark};
+  
+    --primary-color-light: #{$primary-color-light};
+    --secondary-color-light: #{$secondary-color-light};
+    --background-color-light: #{$background-color-light};
+    --surface-color-light: #{$surface-color-light};
+    --highlight-color-light: #{$highlight-color-light};
+  }
