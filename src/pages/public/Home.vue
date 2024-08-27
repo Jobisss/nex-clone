@@ -4,13 +4,14 @@ import SearchInput from '@/components/commun/SearchInput.vue';
 const route = useRoute()
 import CarrouselEvents from '@/components/event/CarrouselEvents.vue';
 import useEventParticipantHook from '../../composables/useEventParticipantApi';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useUserStore } from '@/stores/useUser';
 
 const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
 const user = useUserStore()
 const eventsMoreViews = ref([]);
 const loading = ref(true)
+const query = ref('')
 
 onMounted(async () => {
   try {
@@ -20,6 +21,12 @@ onMounted(async () => {
   } catch (error) {
     console.error('Failed to fetch events:', error);
   }
+});
+
+const filtredEvents = computed(() => {
+  return eventsMoreViews.value.filter((event) =>
+    event.title.toLowerCase().includes(query.value.toLowerCase())
+  );
 });
 
 </script>
@@ -36,9 +43,9 @@ onMounted(async () => {
           </h1>
         </div>
 
-        <SearchInput/>
+        <SearchInput v-model="query"/>
         <div v-if="!loading">
-          <CarrouselEvents :events="eventsMoreViews"/>
+          <CarrouselEvents :events="filtredEvents"/>
         </div>
         <div v-else>
           <p>Loading...</p>
