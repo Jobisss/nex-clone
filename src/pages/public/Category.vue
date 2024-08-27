@@ -15,7 +15,7 @@ const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHoo
 const loading = ref(true)
 
 async function fetchEvents(routeParam) { 
-    const { data } = await eventParticipantControllerFindAllPublicEvents(10, 1, '', getCategory(routeParam));
+    const { data } = await eventParticipantControllerFindAllPublicEvents(100, 1, '', getCategory(routeParam));
     events.value = data.data || [];
     loading.value = false
 }
