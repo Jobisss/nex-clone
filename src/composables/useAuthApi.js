@@ -6,13 +6,18 @@ export function useAthApiHook() {
             email,
             password
         })
-
         try { 
-            const { data } = await api.post('/auth/v1/auth/login', body)
-            return data
+            const response = await api.post('/auth/v1/auth/login', body)
+            console.log(response)
+            return response
         }catch(e) { 
-            console.log(e.message)
-        }   
+            console.log(e)
+            return {
+                status : e.response.data.statusCode,
+                message : e.response.data.message
+            }
+        }
+         
     }
 
     const getUserData = async (token) => { 

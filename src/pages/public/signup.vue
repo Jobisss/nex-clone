@@ -63,7 +63,8 @@ const submit = handleSubmit(values => {
             </form>
         </template>
         <template v-slot:footer>
-            <p class="mt-2 text-subtitle-1">Já possui conta? <RouterLink to="/signin" class="text-primary no-underline">Login</RouterLink>
+        
+            <p class="mt-2 text-subtitle-1 w-50 text-center">Já possui conta? <RouterLink to="/signin" class="text-primary no-underline d-inline">Login</RouterLink>
             </p>
         </template>
     </SignBackground>
