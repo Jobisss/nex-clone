@@ -27,6 +27,7 @@
 </template>
 
 <script setup>
+import CardEvent from "../event/CardEvent.vue";
 import { computed, defineProps } from "vue";
 
 const props = defineProps({

@@ -42,14 +42,11 @@ const submit = handleSubmit(async (values) => {
 
     let response = await postFormLogin(email.value, password.value)
     if(response.status === 201) { 
-        console.log(response.status)
-        console.log("TEM TOKEN")
         window.localStorage.setItem('token', response.data.token)
         const userInfo = await getUserData(window.localStorage.getItem('token'))
         user.updateUser(userInfo)
         router.push('/')
     }else{
-        console.log('not found user')
         updateSnack(2000)
     }
     

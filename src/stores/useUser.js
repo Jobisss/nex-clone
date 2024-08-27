@@ -26,7 +26,6 @@ export const useUserStore = defineStore('menu', () => {
             window.localStorage.removeItem('token')
             router.push('/signin')
         }catch(e) { 
-            console.log(e)
         }
     }
 
