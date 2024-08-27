@@ -79,7 +79,7 @@ function onCLick() {
             </v-list-item>
             <v-list-item>
               <v-btn class=" d-flex align-center justify-start w-100">
-                <template #prepend align="left">
+                <template #prepend>
                   <v-icon>mdi-account</v-icon>
                 </template>
                 Perfil
@@ -88,7 +88,7 @@ function onCLick() {
             </v-list-item>
             <v-list-item>
               <v-btn class=" d-flex align-center justify-start w-100">
-                <template #prepend align="left">
+                <template #prepend>
                   <v-icon>mdi-view-dashboard</v-icon>
                 </template>
                 Painel
@@ -97,7 +97,7 @@ function onCLick() {
             </v-list-item>
             <v-list-item>
               <v-btn @click="user.removeUserData(router)" color="red-lighten-1" class=" d-flex align-center justify-start w-100">
-                <template #prepend align="left">
+                <template #prepend>
                   <v-icon>mdi-logout</v-icon>
                 </template>
                 Sair

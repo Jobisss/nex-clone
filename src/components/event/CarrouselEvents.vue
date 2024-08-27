@@ -20,14 +20,14 @@ const { events } = defineProps(['events']);
       <v-slide-group v-if="!isSmall" show-arrows>
         <v-slide-group-item v-for="event in events" :key="event.id">
           <CardEvent :fixed="true" class="mx-2" :slug="event.slug" :id="event.id" :title="event.title" :category="event.category"
-            :photo="event.photo" />
+            :photo="event.photo" :city="event.city" :state="event.state" />
         </v-slide-group-item>
       </v-slide-group>
 
       <v-window v-else class="w-100" continuous show-arrows="hover">
         <v-window-item class="flex w-100" v-for="event in events" :key="event.id">
           <CardEvent :mobile="isSmall" :key="event.id" :slug="event.slug" :id="event.id" :title="event.title"
-            :category="event.category" :photo="event.photo" />
+            :category="event.category" :photo="event.photo" :city="event.city" :state="event.state"/>
         </v-window-item>
       </v-window>
     </div>

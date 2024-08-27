@@ -10,7 +10,7 @@
       <v-img
         v-else
         src="../../assets/event-info/banner-dark.svg"
-        class=" mt-2"
+        class="mt-2"
       ></v-img>
     </div>
 
@@ -35,7 +35,13 @@
       </div>
     </div>
 
-    <CardSkills />
+    <v-row class="d-flex justify-center align-center my-4 no-gutters">
+      <v-col cols="12" md="8" class="d-flex justify-center">
+        <v-row class="d-flex justify-center align-center" no-gutters>
+          <CardSkill v-for="item, index in cards" :key="index" :title="item.title" :icon="item.icon" :text="item.text"/>
+        </v-row>
+      </v-col>
+    </v-row>
 
     <v-container
       class="d-flex justify-center"
@@ -47,7 +53,7 @@
           class="d-flex justify-center flex-column text-center align-center my-"
           style="flex-basis: inherit"
         >
-          <p><strong>Principais recursos</strong></p>
+          <p><strong>Principais recursos:</strong></p>
 
           <h1 class="my-3 text-primary">Tudo o que você precisa para organizar eventos.</h1>
 
@@ -148,14 +154,31 @@
 
 <script setup>
 import { useRoute } from "vue-router";
-import CardSkills from "../../components/event-info/CardSkills.vue";
+import CardSkill from "@/components/event-info/CardSkill.vue";
 
 const route = useRoute();
+
+const cards = [
+  {
+    title: "CREDENCIAMENTO",
+    icon: "mdi-qrcode-scan",
+    text: "Credenciamento por QrCode e facial, dentro da plataforma sem precisar de equipamentos."
+  },
+  {
+    title: "FACILIDADE",
+    icon: "mdi-chart-timeline-variant",
+    text: "De maneira fácil e intuitiva você cria e escolhe o credenciamento que quiser."
+  },
+  {
+    title: "RAPIDEZ",
+    icon: "mdi-lightning-bolt-outline",
+    text: "Resolva tudo que precisa do seu evento em questão de minutos."
+  }
+]
+
 </script>
 
 <style scoped>
-
-
 .text-recurse {
   margin-bottom: 5%;
   text-align: center;

@@ -2,7 +2,7 @@
 import { BASE_IMAGE_URL } from '@/utils/getConstants';
 import { firstAndLastWordFirstLetters } from '@/utils/getNameInitials';
 
-const {category, id ,photo ,slug ,title, mobile, fixed } = defineProps(['category', 'id', 'photo', 'title', 'mobile','fixed'])
+const {category, id ,photo ,slug ,title, mobile, fixed, city, state } = defineProps(['category', 'id', 'photo', 'title', 'mobile','fixed', 'city', 'state'])
   
 </script>
 <template>
@@ -47,11 +47,18 @@ const {category, id ,photo ,slug ,title, mobile, fixed } = defineProps(['categor
           13/06/2024
         </div>
 
-        <div class="px-4 mb-2 d-flex align-center">
+        <div v-if="city && state" class="px-4 mb-2 d-flex align-center">
           <v-icon size="x-small" class="mx-1"> mdi-map-marker </v-icon>
-          Arapuã - Paraná
+          {{ city }} - {{ state }}
+        </div>
+
+        <div v-else class="px-4 mb-2 d-flex align-center">
+          <v-icon size="x-small" class="mx-1"> mdi-map-marker </v-icon>
+          Local não definido
         </div>
       </div>
+
+      
 
       <v-card-actions>
         <v-btn color="primary" block border>

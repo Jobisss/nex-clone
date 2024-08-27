@@ -1,10 +1,27 @@
 <template>
   <v-row class="d-flex my-2 mx-1 w-full">
+    
+    <v-col
+      xs="12"
+      sm="12"
+      md="6"
+      lg="4"
+      class="w-100 d-flex justify-center"
+      v-for="event in filteredEvents"
+      :key="event.id"
+    >
+      <CardEvent
+        class="mx-2 w-100"
+        width="100%"
+        :slug="event.slug"
+        :id="event.id"
+        :title="event.title"
+        :category="event.category"
+        :photo="event.photo"
+        :city="event.city"
+        :state="event.state"
+      />
 
-    <v-col xs="12" sm="12" md="6" lg="4" class="d-flex justify-center" width="100%" v-for="event in filteredEvents"
-      :key="event.id">
-      <CardEvent class="mx-2 w-100" style="width: 100%;" :slug="event.slug" :id="event.id" :title="event.title"
-        :category="event.category" :photo="event.photo" />
     </v-col>
   </v-row>
 </template>
@@ -23,6 +40,7 @@ const props = defineProps({
     default: "",
   },
 });
+
 
 
 const filteredEvents = computed(() => {

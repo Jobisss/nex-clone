@@ -4,7 +4,7 @@ import { watch, ref, onMounted, computed } from "vue";
 import SearchEvents from "@/components/event-sale/SearchEvents.vue";
 import { getCategory } from "@/utils/getCategory";
 import useEventParticipantHook from "@/composables/useEventParticipantApi";
-import CategoryGrid from "@/components/category/CategoryGrid.vue";
+import CategoryGrid from "@/components/event/GridEvent.vue";
 const route = useRoute()
 const nameCategory = ref(getCategory(route.params.category))
 const events = ref([]);
@@ -15,7 +15,7 @@ const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHoo
 const loading = ref(true)
 
 async function fetchEvents(routeParam) { 
-    const { data } = await eventParticipantControllerFindAllPublicEvents(10, 1, '', getCategory(routeParam));
+    const { data } = await eventParticipantControllerFindAllPublicEvents(100, 1, '', getCategory(routeParam));
     events.value = data.data || [];
     loading.value = false
 }

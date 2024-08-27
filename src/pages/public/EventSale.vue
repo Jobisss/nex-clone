@@ -4,7 +4,7 @@ import { ref, onMounted } from 'vue';
 import { useCategory } from '@/stores/useCategory';
 import CarrouselEvents from '@/components/event/CarrouselEvents.vue';
 import { getCategory } from '@/utils/getCategory';
-import CategoryGrid from '@/components/category/CategoryGrid.vue';
+import CategoryGrid from '@/components/event/GridEvent.vue';
 
 const store = useCategory()
 const { eventParticipantControllerFindAllPublicEvents, eventParticipantControllerGetEventsMoreView } = useEventParticipantHook();
